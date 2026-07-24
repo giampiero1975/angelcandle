@@ -1,0 +1,118 @@
+/* Stili per il contenitore del form */
+.card {
+    background: #ffffff; /* Stesso colore di sfondo del template */
+    color: #39454b; /* Colore del testo principale del template */
+    padding: 2em; /* Spazio interno */
+    border-radius: 0.5em; /* Bordi arrotondati */
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+.card-header {
+    background-color: #f0f0f0; /* Un colore di sfondo leggero per l'header */
+    color: #39454b;
+    padding: 0.75em 1.25em;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 1.5em;
+}
+
+/* Stili per le etichette (label) */
+.card-body label.col-form-label {
+    color: #39454b; /* Colore del testo */
+    font-weight: bold; /* Grassetto */
+    text-align: left; /* Allineamento a sinistra */
+    margin-bottom: 0.5em; /* Spazio sotto l'etichetta */
+}
+
+/* Stili per gli input */
+.card-body input.form-control {
+    /* Reset degli stili di default e Bootstrap */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    width: 100%;
+    padding: 0.65em 0.75em;
+    background: none;
+    border: solid 2px #e5e6e7;
+    color: inherit;
+    border-radius: 0.5em;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.card-body input.form-control:focus {
+    border-color: #9ac8e9; /* Colore del bordo al focus */
+}
+
+.card-body input.form-control::placeholder {
+    color: #aaa; /* Stile per il testo placeholder */
+    opacity: 1; /* Specificità per evitare problemi di compatibilità */
+}
+
+/* Stili per i pulsanti */
+.card-body button.btn-primary {
+    /* Reset degli stili di default e Bootstrap */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+    background-color: #98c593; /* Colore di sfondo del template */
+    border: 0;
+    border-radius: 3.5em; /* Bordi molto arrotondati */
+    color: #ffffff; /* Colore del testo */
+    cursor: pointer;
+    display: inline-block;
+    height: 3.5em;
+    line-height: 3.5em;
+    outline: 0;
+    padding: 0 2em 0 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.card-body button.btn-primary:hover {
+    background-color: #a8cea4; /* Colore di sfondo al hover */
+}
+
+.card-body button.btn-primary:active {
+    background-color: #88bc82; /* Colore di sfondo al click */
+}
+
+/* Stili per i link */
+.card-body a.btn-link {
+    color: #98c593; /* Colore del link */
+    text-decoration: none; /* Nessuna sottolineatura */
+}
+
+.card-body a.btn-link:hover {
+    text-decoration: underline; /* Sottolineatura al hover */
+}
+
+/* Stili per il checkbox "Remember Me" */
+.form-check-label {
+    color: #39454b;
+}
+
+.login-form-container {
+    background: #ffffff;
+    color: #39454b;
+    padding: 2em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.15);
+    width: 400px; /* Larghezza fissa per il form */
+    margin: 0 auto; /* Centra il form orizzontalmente */
+}

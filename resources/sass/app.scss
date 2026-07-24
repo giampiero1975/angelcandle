@@ -1,0 +1,50 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// resources/sass/app.scss
+@import 'variables';
+
+    body {
+        background-color: $primary-color;
+        color: $text-color;
+    }
+
+    h1, h2, h3 {
+        color: $accent-color;
+    }
+
+    a {
+        color: $secondary-color;
+
+        &:hover{
+            color: darken($secondary-color, 10%);
+        }
+    }
+
+    .btn-primary {
+        background-color: $accent-color;
+        border-color: $accent-color;
+        color: white;
+    }
+
+    .icon {
+        color: $secondary-color;
+    }
+
+    .light-section{
+        background-color: $primary-color;
+    }
+
+    .neutral-background{
+        background-color: $background-neutral;
+    }
+
+    .white-background{
+        background-color: $background-white;
+    }
