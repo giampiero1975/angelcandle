@@ -1,0 +1,63 @@
+/*
+Theme Name: AngelCandle Child
+Theme URI: https://byoursite.com/
+Description: Child theme AngelCandle basato su Blocksy.
+Author: BYOURSITE
+Template: blocksy
+Version: 0.1.0
+Text Domain: angelcandle
+*/
+
+:root{
+  --ac-ivory:#f7f2e8;
+  --ac-sage:#8f9a7b;
+  --ac-champagne:#c6a46c;
+  --ac-green:#41483c;
+  --ac-charcoal:#35332e;
+}
+
+body{background:var(--ac-ivory);color:var(--ac-charcoal)}
+.ac-home{background:var(--ac-ivory)}
+.ac-wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.ac-topbar{background:var(--ac-sage);color:#fff;text-align:center;padding:12px 20px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.ac-hero{min-height:620px;display:grid;grid-template-columns:1fr 1.12fr;background:#f5efe5}
+.ac-hero__copy{display:flex;flex-direction:column;justify-content:center;padding:70px max(40px,calc((100vw - 1180px)/2));padding-right:55px}
+.ac-kicker{font-size:18px;font-family:Georgia,serif;font-style:italic;color:var(--ac-champagne);margin:0 0 22px}
+.ac-hero h1,.ac-section-title,.ac-story h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.035em;color:var(--ac-charcoal)}
+.ac-hero h1{font-size:clamp(48px,5vw,78px);line-height:.98;margin:0 0 26px}
+.ac-hero p{font-size:18px;line-height:1.65;max-width:520px;margin:0 0 32px}
+.ac-btn{display:inline-flex;align-items:center;gap:14px;width:max-content;background:var(--ac-sage);color:#fff!important;border-radius:999px;padding:16px 27px;text-decoration:none!important;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.ac-btn:hover{background:var(--ac-green)}
+.ac-hero__visual{min-height:620px;background:linear-gradient(115deg,#eee6d9,#d8d1bf);position:relative;overflow:hidden}
+.ac-placeholder{position:absolute;inset:0;display:grid;place-items:center;padding:30px;text-align:center;color:rgba(53,51,46,.58);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.ac-placeholder:before{content:"";position:absolute;width:280px;height:360px;border-radius:46% 46% 20% 20%;background:rgba(255,255,255,.38);box-shadow:0 30px 60px rgba(53,51,46,.12)}
+.ac-placeholder span{position:relative;z-index:1;max-width:220px}
+.ac-benefits{background:#fff;padding:34px 0}
+.ac-benefits__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;text-align:center}
+.ac-benefit__icon{font-size:34px;line-height:1;color:var(--ac-green);margin-bottom:10px}
+.ac-benefit strong{display:block;font-size:12px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase}
+.ac-collections{padding:55px 0 65px;background:#fff}
+.ac-section-title{text-align:center;font-size:clamp(38px,4vw,55px);margin:0 0 34px}
+.ac-collections__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ac-card{text-align:center}
+.ac-card__image{aspect-ratio:1/1;background:linear-gradient(145deg,#e7e1d4,#c9c3b2);position:relative;overflow:hidden;margin-bottom:16px}
+.ac-card:nth-child(2) .ac-card__image{background:linear-gradient(145deg,#ded6c7,#b9a88d)}
+.ac-card:nth-child(3) .ac-card__image{background:linear-gradient(145deg,#eee9df,#cfc5b3)}
+.ac-card:nth-child(4) .ac-card__image{background:linear-gradient(145deg,#e5ddd1,#c5b49e)}
+.ac-card__image span{position:absolute;inset:0;display:grid;place-items:center;padding:20px;color:rgba(53,51,46,.52);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.ac-card h3{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 5px}
+.ac-card p{font-family:Georgia,serif;font-size:14px;margin:0;color:#706b61}
+.ac-story{display:grid;grid-template-columns:1.25fr .75fr;min-height:360px;background:#eee7db}
+.ac-story__visual{background:linear-gradient(120deg,#77816b,#d8cbb5);position:relative}
+.ac-story__copy{display:flex;flex-direction:column;justify-content:center;padding:55px}
+.ac-story h2{font-size:clamp(38px,4vw,55px);line-height:1.05;margin:0 0 30px}
+@media(max-width:900px){
+ .ac-hero{grid-template-columns:1fr}.ac-hero__copy{padding:55px 30px}.ac-hero__visual{min-height:430px}
+ .ac-benefits__grid,.ac-collections__grid{grid-template-columns:repeat(2,1fr)}
+ .ac-story{grid-template-columns:1fr}.ac-story__visual{min-height:320px}.ac-story__copy{padding:45px 30px}
+}
+@media(max-width:520px){
+ .ac-wrap{width:min(100% - 28px,1180px)}.ac-topbar{font-size:10px}.ac-hero h1{font-size:47px}
+ .ac-benefits__grid{grid-template-columns:1fr 1fr;gap:28px 12px}.ac-collections__grid{grid-template-columns:1fr 1fr;gap:12px}
+ .ac-card p{font-size:12px}
+}
