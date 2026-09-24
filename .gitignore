@@ -38,3 +38,7 @@ Thumbs.db
 node_modules/
 vendor/
 *.log
+
+# WordPress generated/local files
+/.htaccess
+/wp-content/index.php
