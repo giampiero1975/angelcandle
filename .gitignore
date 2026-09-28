@@ -20,7 +20,8 @@
 
 # Themes
 /wp-content/themes/*
-!/wp-content/themes/angelcandle-theme/
+!/wp-content/themes/angel-candles/
+!/wp-content/themes/angel-candles/**
 
 # Environment / secrets
 wp-config.php
