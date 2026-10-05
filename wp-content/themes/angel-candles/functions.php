@@ -68,6 +68,15 @@ function angel_candles_assets(): void
             $version
         );
     }
+
+    if (is_page('emozioni') || is_page_template('page-emozioni.php')) {
+        wp_enqueue_style(
+            'angel-candles-emozioni',
+            get_template_directory_uri() . '/assets/css/emozioni.css',
+            array('angel-candles-theme'),
+            $version
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'angel_candles_assets');
 
@@ -78,7 +87,7 @@ function angel_candles_menu_fallback(): void
     echo '<a href="#candele">Candele</a>';
     echo '<a href="#creazioni">Creazioni</a>';
     echo '<a href="#eventi">Eventi</a>';
-    echo '<a href="#chi-sono">Chi sono</a>';
+    echo '<a href="#emozioni">Emozioni</a>';
     echo '<a href="#contatti">Contatti</a>';
     echo '</nav>';
 }
