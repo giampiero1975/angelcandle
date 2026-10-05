@@ -22,9 +22,9 @@ $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/cre
                 <a href="<?php echo esc_url(home_url('/candele/')); ?>"><?php esc_html_e('Personalizzazioni', 'angel-candles'); ?></a>
                 <h2 class="info-title"><?php esc_html_e('Info', 'angel-candles'); ?></h2>
                 <img class="heading-line" src="<?php echo esc_url($angel_assets . 'cae64.svg'); ?>" alt="">
-                <span><?php esc_html_e('Privacy', 'angel-candles'); ?></span>
-                <span><?php esc_html_e('Cookie', 'angel-candles'); ?></span>
-                <span><?php esc_html_e('Note legali', 'angel-candles'); ?></span>
+                <a href="<?php echo esc_url(home_url('/privacy/')); ?>"><?php esc_html_e('Privacy', 'angel-candles'); ?></a>
+                <a href="<?php echo esc_url(home_url('/cookie/')); ?>"><?php esc_html_e('Cookie', 'angel-candles'); ?></a>
+                <a href="<?php echo esc_url(home_url('/note-legali/')); ?>"><?php esc_html_e('Note legali', 'angel-candles'); ?></a>
             </section>
             <section>
                 <h2><?php esc_html_e('Contatti', 'angel-candles'); ?></h2>
