@@ -21,15 +21,15 @@ add_action('after_setup_theme', 'angel_candles_setup');
 
 function angel_candles_assets(): void
 {
-    // CSS globale del tema / Home
+    $version = wp_get_theme()->get('Version');
+
     wp_enqueue_style(
         'angel-candles-theme',
         get_template_directory_uri() . '/assets/css/theme.css',
         array(),
-        wp_get_theme()->get('Version')
+        $version
     );
 
-    // Creazioni
     if (
         is_post_type_archive('angel_creazione') ||
         is_singular('angel_creazione') ||
@@ -39,7 +39,15 @@ function angel_candles_assets(): void
             'angel-candles-creazioni',
             get_template_directory_uri() . '/assets/css/creazioni.css',
             array('angel-candles-theme'),
-            wp_get_theme()->get('Version')
+            $version
+        );
+
+        wp_enqueue_script(
+            'angel-candles-creazioni',
+            get_template_directory_uri() . '/assets/js/creazioni.js',
+            array(),
+            $version,
+            true
         );
     }
 }
