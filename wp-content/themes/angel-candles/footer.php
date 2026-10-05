@@ -1,11 +1,14 @@
-<?php $angel_assets = get_template_directory_uri() . '/assets/images/'; ?>
-    <footer id="contatti">
+<?php
+$angel_assets = get_template_directory_uri() . '/assets/images/';
+$creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/creazioni/');
+?>
+    <footer>
         <div class="footer-grid">
             <div class="footer-signature">
                 <img src="<?php echo esc_url($angel_assets . 'd66c7.png'); ?>" alt="<?php esc_attr_e('Monogramma Angel Candles', 'angel-candles'); ?>">
                 <p><?php esc_html_e('Ogni candela racconta una emozione', 'angel-candles'); ?></p>
             </div>
-            <section id="chi-sono">
+            <section>
                 <h2><?php esc_html_e('Angelcandles', 'angel-candles'); ?></h2>
                 <img class="heading-line" src="<?php echo esc_url($angel_assets . 'cae64.svg'); ?>" alt="">
                 <p class="about-copy"><?php esc_html_e('Candele create a mano, pensate per custodire atmosfere, ricordi e piccoli momenti speciali. Ogni creazione nasce con cura e racconta una storia unica.', 'angel-candles'); ?></p>
@@ -13,23 +16,23 @@
             <section>
                 <h2><?php esc_html_e('Scopri', 'angel-candles'); ?></h2>
                 <img class="heading-line" src="<?php echo esc_url($angel_assets . 'cae64.svg'); ?>" alt="">
-                <a href="#creazioni"><?php esc_html_e('Bomboniere', 'angel-candles'); ?></a>
-                <a href="#creazioni"><?php esc_html_e('Idee regalo', 'angel-candles'); ?></a>
-                <a href="#creazioni"><?php esc_html_e('Festività', 'angel-candles'); ?></a>
-                <a href="#creazioni"><?php esc_html_e('Personalizzazioni', 'angel-candles'); ?></a>
+                <a href="<?php echo esc_url(add_query_arg('categoria', 'bomboniere', $creazioni_url)); ?>"><?php esc_html_e('Bomboniere', 'angel-candles'); ?></a>
+                <a href="<?php echo esc_url(add_query_arg('categoria', 'idee-regalo', $creazioni_url)); ?>"><?php esc_html_e('Idee regalo', 'angel-candles'); ?></a>
+                <a href="<?php echo esc_url(add_query_arg('categoria', 'festivita', $creazioni_url)); ?>"><?php esc_html_e('Festività', 'angel-candles'); ?></a>
+                <a href="<?php echo esc_url(home_url('/candele/')); ?>"><?php esc_html_e('Personalizzazioni', 'angel-candles'); ?></a>
                 <h2 class="info-title"><?php esc_html_e('Info', 'angel-candles'); ?></h2>
                 <img class="heading-line" src="<?php echo esc_url($angel_assets . 'cae64.svg'); ?>" alt="">
-                <a href="#contatti"><?php esc_html_e('Privacy', 'angel-candles'); ?></a>
-                <a href="#contatti"><?php esc_html_e('Cookie', 'angel-candles'); ?></a>
-                <a href="#contatti"><?php esc_html_e('Note legali', 'angel-candles'); ?></a>
+                <span><?php esc_html_e('Privacy', 'angel-candles'); ?></span>
+                <span><?php esc_html_e('Cookie', 'angel-candles'); ?></span>
+                <span><?php esc_html_e('Note legali', 'angel-candles'); ?></span>
             </section>
             <section>
                 <h2><?php esc_html_e('Contatti', 'angel-candles'); ?></h2>
                 <img class="heading-line" src="<?php echo esc_url($angel_assets . 'b20bc.svg'); ?>" alt="">
                 <div class="footer-socials">
-                    <a href="#contatti" aria-label="Facebook"><img src="<?php echo esc_url($angel_assets . '2da19.png'); ?>" alt=""></a>
-                    <a href="#contatti" aria-label="Instagram"><img src="<?php echo esc_url($angel_assets . '8246d.png'); ?>" alt=""></a>
-                    <a href="#contatti" aria-label="Pinterest"><img src="<?php echo esc_url($angel_assets . '04409.png'); ?>" alt=""></a>
+                    <a href="<?php echo esc_url(home_url('/contatti/')); ?>" aria-label="Facebook"><img src="<?php echo esc_url($angel_assets . '2da19.png'); ?>" alt=""></a>
+                    <a href="<?php echo esc_url(home_url('/contatti/')); ?>" aria-label="Instagram"><img src="<?php echo esc_url($angel_assets . '8246d.png'); ?>" alt=""></a>
+                    <a href="<?php echo esc_url(home_url('/contatti/')); ?>" aria-label="WhatsApp"><img src="<?php echo esc_url($angel_assets . '04409.png'); ?>" alt=""></a>
                 </div>
             </section>
             <span class="footer-divider footer-divider-one" aria-hidden="true"><img src="<?php echo esc_url($angel_assets . '7b1dc.svg'); ?>" alt=""></span>
