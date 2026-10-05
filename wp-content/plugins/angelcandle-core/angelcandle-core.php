@@ -22,6 +22,62 @@ define('ANGELCANDLE_CORE_VERSION', '0.1.0');
  */
 
 /**
+ * Modalita vetrina.
+ *
+ * Finche il progetto non viene trasformato in e-commerce, le pagine pubbliche
+ * di WooCommerce restano installate nel backend ma non sono raggiungibili dal
+ * frontend. Per attivare in futuro l'e-commerce basta impostare la costante
+ * ANGELCANDLE_ECOMMERCE_ENABLED a true nel wp-config.php.
+ */
+function angelcandle_ecommerce_enabled(): bool
+{
+    return defined('ANGELCANDLE_ECOMMERCE_ENABLED') && ANGELCANDLE_ECOMMERCE_ENABLED === true;
+}
+
+function angelcandle_disable_woocommerce_storefront(): void
+{
+    if (angelcandle_ecommerce_enabled() || !class_exists('WooCommerce')) {
+        return;
+    }
+
+    // Non interferire mai con backend, AJAX, REST API, cron o WP-CLI.
+    if (is_admin() || wp_doing_ajax() || (defined('REST_REQUEST') && REST_REQUEST) || wp_doing_cron() || (defined('WP_CLI') && WP_CLI)) {
+        return;
+    }
+
+    $to_candele = is_shop() || is_product() || is_product_category() || is_product_tag();
+    $to_home = is_cart() || is_checkout() || is_account_page();
+
+    if ($to_candele) {
+        wp_safe_redirect(home_url('/candele/'), 302);
+        exit;
+    }
+
+    if ($to_home) {
+        wp_safe_redirect(home_url('/'), 302);
+        exit;
+    }
+}
+add_action('template_redirect', 'angelcandle_disable_woocommerce_storefront', 1);
+
+/**
+ * Evita che prodotti WooCommerce compaiano accidentalmente nella ricerca
+ * pubblica mentre AngelCandles e in modalita vetrina.
+ */
+function angelcandle_hide_products_from_public_search($query): void
+{
+    if (angelcandle_ecommerce_enabled() || is_admin() || !$query->is_main_query() || !$query->is_search()) {
+        return;
+    }
+
+    $post_type = $query->get('post_type');
+    if (empty($post_type) || $post_type === 'any') {
+        $query->set('post_type', ['post', 'page', 'angel_creazione']);
+    }
+}
+add_action('pre_get_posts', 'angelcandle_hide_products_from_public_search');
+
+/**
  * Custom Post Type: Creazioni
  */
 function angelcandle_register_creazioni_post_type(): void
