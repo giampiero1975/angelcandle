@@ -50,6 +50,15 @@ function angel_candles_assets(): void
             true
         );
     }
+
+    if (is_page_template('page-candele.php')) {
+        wp_enqueue_style(
+            'angel-candles-candele',
+            get_template_directory_uri() . '/assets/css/candele.css',
+            array('angel-candles-theme'),
+            $version
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'angel_candles_assets');
 
