@@ -82,12 +82,14 @@ add_action('wp_enqueue_scripts', 'angel_candles_assets');
 
 function angel_candles_menu_fallback(): void
 {
+    $creazioni_url = get_post_type_archive_link('angel_creazione');
+
     echo '<nav class="main-nav" aria-label="' . esc_attr__('Navigazione principale', 'angel-candles') . '">';
-    echo '<a href="#home">Home</a>';
-    echo '<a href="#candele">Candele</a>';
-    echo '<a href="#creazioni">Creazioni</a>';
-    echo '<a href="#eventi">Eventi</a>';
-    echo '<a href="#emozioni">Emozioni</a>';
-    echo '<a href="#contatti">Contatti</a>';
+    echo '<a href="' . esc_url(home_url('/')) . '">Home</a>';
+    echo '<a href="' . esc_url(home_url('/candele/')) . '">Candele</a>';
+    echo '<a href="' . esc_url($creazioni_url ?: home_url('/creazioni/')) . '">Creazioni</a>';
+    echo '<a href="' . esc_url(home_url('/eventi/')) . '">Eventi</a>';
+    echo '<a href="' . esc_url(home_url('/emozioni/')) . '">Emozioni</a>';
+    echo '<a href="' . esc_url(home_url('/contatti/')) . '">Contatti</a>';
     echo '</nav>';
 }
