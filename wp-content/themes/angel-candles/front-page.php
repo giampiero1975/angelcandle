@@ -8,10 +8,10 @@ $features = array(
     array('0c759.png', __('Atmosfere speciali', 'angel-candles')),
 );
 $creations = array(
-    array('f4286.png', __('Decorative', 'angel-candles')),
-    array('f5852.png', __('Bomboniere', 'angel-candles')),
-    array('26b64.png', __('Festività', 'angel-candles')),
-    array('41f1f.png', __('Idee regalo', 'angel-candles')),
+    array('f4286.png', __('Decorative', 'angel-candles'), 'decorative'),
+    array('f5852.png', __('Bomboniere', 'angel-candles'), 'bomboniere'),
+    array('26b64.png', __('Festività', 'angel-candles'), 'festivita'),
+    array('41f1f.png', __('Idee regalo', 'angel-candles'), 'idee-regalo'),
 );
 $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/creazioni/');
 ?>
@@ -34,7 +34,7 @@ $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/cre
         <h2 id="creations-title"><?php esc_html_e('Le mie creazioni', 'angel-candles'); ?></h2>
         <div class="creation-grid">
             <?php foreach ($creations as $creation) : ?>
-                <a class="creation-card" href="<?php echo esc_url($creazioni_url); ?>">
+                <a class="creation-card" href="<?php echo esc_url(add_query_arg('categoria', $creation[2], $creazioni_url)); ?>">
                     <img src="<?php echo esc_url($angel_assets . $creation[0]); ?>" alt="<?php echo esc_attr(sprintf(__('Candela %s', 'angel-candles'), strtolower($creation[1]))); ?>">
                     <h3><?php echo esc_html($creation[1]); ?></h3>
                 </a>
