@@ -33,6 +33,9 @@ function angel_candles_assets(): void
     if (is_page('contatti') || is_page_template('page-contatti.php')) {
         wp_enqueue_style('angel-candles-contatti', get_template_directory_uri() . '/assets/css/contatti.css', array('angel-candles-theme'), $version);
     }
+    if (is_page(array('privacy', 'cookie', 'note-legali')) || is_page_template(array('page-privacy.php', 'page-cookie.php', 'page-note-legali.php'))) {
+        wp_enqueue_style('angel-candles-legal', get_template_directory_uri() . '/assets/css/legal.css', array('angel-candles-theme'), $version);
+    }
 }
 add_action('wp_enqueue_scripts', 'angel_candles_assets');
 
