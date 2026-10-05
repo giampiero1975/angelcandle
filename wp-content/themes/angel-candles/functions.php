@@ -51,7 +51,9 @@ function angel_candles_assets(): void
         );
     }
 
-    if (is_page_template('page-candele.php')) {
+    /* page-candele.php is selected by the WordPress template hierarchy
+       from the page slug, so is_page_template() alone is not sufficient. */
+    if (is_page('candele') || is_page_template('page-candele.php')) {
         wp_enqueue_style(
             'angel-candles-candele',
             get_template_directory_uri() . '/assets/css/candele.css',
