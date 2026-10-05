@@ -10,7 +10,7 @@ $assets = get_template_directory_uri() . '/assets/images/';
 $qualities = array(
     array('24d40.png', __('Fatte a mano', 'angel-candles'), __('Ogni candela nasce artigianalmente, con cura per i dettagli e per le piccole imperfezioni che rendono ogni pezzo unico.', 'angel-candles')),
     array('2ed11.png', __('Personalizzate', 'angel-candles'), __('Colori, dettagli e confezioni possono essere pensati per raccontare un momento, una persona o un’occasione speciale.', 'angel-candles')),
-    array('d2538.png', __('Eventi & cerimonie', 'angel-candles'), __('Piccoli ricordi creati per battesimi, comunioni, matrimoni, feste e occasioni da celebrare.', 'angel-candles')),
+    array('d2538.png', __('Idee regalo', 'angel-candles'), __('Piccoli pensieri creati a mano, da personalizzare e regalare a chi vuoi sorprendere con qualcosa di speciale.', 'angel-candles')),
     array('0c759.png', __('Atmosfere speciali', 'angel-candles'), __('Una luce calda e delicata per trasformare un angolo di casa e accompagnare i momenti da ricordare.', 'angel-candles')),
 );
 ?>
