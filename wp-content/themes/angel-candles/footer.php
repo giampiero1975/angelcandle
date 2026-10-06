@@ -30,9 +30,9 @@ $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/cre
                 <h2><?php esc_html_e('Contatti', 'angel-candles'); ?></h2>
                 <img class="heading-line" src="<?php echo esc_url($angel_assets . 'b20bc.svg'); ?>" alt="">
                 <div class="footer-socials">
-                    <a href="<?php echo esc_url(home_url('/contatti/')); ?>" aria-label="Facebook"><img src="<?php echo esc_url($angel_assets . '2da19.png'); ?>" alt=""></a>
-                    <a href="<?php echo esc_url(home_url('/contatti/')); ?>" aria-label="Instagram"><img src="<?php echo esc_url($angel_assets . '8246d.png'); ?>" alt=""></a>
-                    <a href="<?php echo esc_url(home_url('/contatti/')); ?>" aria-label="WhatsApp"><img src="<?php echo esc_url($angel_assets . '04409.png'); ?>" alt=""></a>
+                    <a href="https://www.facebook.com/angelcandles.it" target="_blank" rel="noopener noreferrer" aria-label="Facebook AngelCandles"><img src="<?php echo esc_url($angel_assets . '2da19.png'); ?>" alt=""></a>
+                    <a href="https://www.instagram.com/angelcandles.it/" target="_blank" rel="noopener noreferrer" aria-label="Instagram AngelCandles"><img src="<?php echo esc_url($angel_assets . '8246d.png'); ?>" alt=""></a>
+                    <a href="https://wa.me/393476806154?text=Ciao%2C%20vorrei%20avere%20informazioni%20su%20una%20creazione%20AngelCandles" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AngelCandles"><img src="<?php echo esc_url($angel_assets . '04409.png'); ?>" alt=""></a>
                 </div>
             </section>
             <span class="footer-divider footer-divider-one" aria-hidden="true"><img src="<?php echo esc_url($angel_assets . '7b1dc.svg'); ?>" alt=""></span>
