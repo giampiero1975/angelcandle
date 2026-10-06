@@ -46,8 +46,7 @@ $assets = get_template_directory_uri() . '/assets/images/';
 
     <section class="emozioni-quote">
         <div class="emozioni-quote-inner">
-            <span aria-hidden="true">“</span>
-            <blockquote><?php esc_html_e('Creata per accendere un momento speciale.', 'angel-candles'); ?></blockquote>
+            <blockquote><?php esc_html_e('“Creata per accendere un momento speciale.”', 'angel-candles'); ?></blockquote>
         </div>
     </section>
 
@@ -59,7 +58,7 @@ $assets = get_template_directory_uri() . '/assets/images/';
             <p class="emozioni-eyebrow"><?php esc_html_e('Da un’idea a una luce', 'angel-candles'); ?></p>
             <h2><?php esc_html_e('La tua emozione può diventare una creazione', 'angel-candles'); ?></h2>
             <p><?php esc_html_e('Un regalo, una ricorrenza, un evento o semplicemente un pensiero. A volte basta raccontare l’idea da cui vuoi partire.', 'angel-candles'); ?></p>
-            <a class="emozioni-button" href="<?php echo esc_url(home_url('/#contatti')); ?>"><?php esc_html_e('Raccontami la tua idea', 'angel-candles'); ?></a>
+            <a class="emozioni-button" href="<?php echo esc_url(home_url('/contatti/')); ?>"><?php esc_html_e('Raccontami la tua idea', 'angel-candles'); ?></a>
         </div>
     </section>
 </main>
