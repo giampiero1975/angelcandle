@@ -39,7 +39,7 @@ $creazioni_url = get_post_type_archive_link('angel_creazione');
         <article class="evento-card evento-card-matrimoni">
             <span>02</span>
             <h2><?php esc_html_e('Matrimoni', 'angel-candles'); ?></h2>
-            <p><?php esc_html_e('Candele e confezioni coordinate allo stile della giornata, da lasciare agli invitati come ricordo.', 'angel-candles'); ?></p>
+            <p><?php esc_html_e('Centritavola, candele e confezioni coordinate allo stile della giornata, da lasciare agli invitati come ricordo.', 'angel-candles'); ?></p>
         </article>
         <article class="evento-card evento-card-feste">
             <span>03</span>
@@ -70,7 +70,7 @@ $creazioni_url = get_post_type_archive_link('angel_creazione');
             <p class="eventi-eyebrow"><?php esc_html_e('Raccontami la tua idea', 'angel-candles'); ?></p>
             <h2><?php esc_html_e('Stai organizzando un momento speciale?', 'angel-candles'); ?></h2>
             <p><?php esc_html_e('Dimmi che occasione stai preparando e che atmosfera immagini. Da lì possiamo capire insieme colori, quantità, stile e dettagli.', 'angel-candles'); ?></p>
-            <a class="eventi-button" href="<?php echo esc_url(home_url('/#contatti')); ?>"><?php esc_html_e('Parliamone', 'angel-candles'); ?></a>
+            <a class="eventi-button" href="<?php echo esc_url(home_url('/contatti/')); ?>"><?php esc_html_e('Parliamone', 'angel-candles'); ?></a>
         </div>
     </section>
 </main>
