@@ -13,6 +13,42 @@ if (!defined('ABSPATH')) {
 
 define('ANGELCANDLE_CORE_VERSION', '0.1.0');
 
+/**
+ * Configura wp_mail() tramite SMTP quando le credenziali sono definite
+ * nel wp-config.php. Le credenziali restano quindi fuori dal repository.
+ */
+function angelcandle_configure_smtp($phpmailer): void
+{
+    $required = [
+        'ANGELCANDLE_SMTP_HOST',
+        'ANGELCANDLE_SMTP_PORT',
+        'ANGELCANDLE_SMTP_USER',
+        'ANGELCANDLE_SMTP_PASSWORD',
+    ];
+
+    foreach ($required as $constant) {
+        if (!defined($constant) || constant($constant) === '') {
+            return;
+        }
+    }
+
+    $phpmailer->isSMTP();
+    $phpmailer->Host = ANGELCANDLE_SMTP_HOST;
+    $phpmailer->Port = (int) ANGELCANDLE_SMTP_PORT;
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Username = ANGELCANDLE_SMTP_USER;
+    $phpmailer->Password = ANGELCANDLE_SMTP_PASSWORD;
+
+    $encryption = defined('ANGELCANDLE_SMTP_ENCRYPTION') ? strtolower((string) ANGELCANDLE_SMTP_ENCRYPTION) : 'tls';
+    if (in_array($encryption, ['tls', 'ssl'], true)) {
+        $phpmailer->SMTPSecure = $encryption;
+    }
+
+    // Il mittente deve coincidere con l'account SMTP autenticato.
+    $phpmailer->setFrom(ANGELCANDLE_SMTP_USER, 'AngelCandles', false);
+}
+add_action('phpmailer_init', 'angelcandle_configure_smtp');
+
 /*
  * Regola architetturale:
  * WooCommerce gestisce catalogo, carrello, checkout, ordini, pagamenti,
