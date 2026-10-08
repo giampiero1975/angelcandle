@@ -12,7 +12,7 @@
     <header class="site-header">
         <div class="brand-row">
             <a class="brand-mark-link" href="<?php echo esc_url(home_url('/')); ?>" aria-label="AngelCandles - Torna alla home"><img class="brand-mark" src="<?php echo esc_url($angel_assets . '26594.webp'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
-            <a class="brand-wordmark-link" href="<?php echo esc_url(home_url('/')); ?>" aria-label="AngelCandles - Torna alla home"><img class="brand-wordmark" src="<?php echo esc_url($angel_assets . '12b26.webp'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
+            <a class="brand-wordmark-link" href="<?php echo esc_url(home_url('/')); ?>" aria-label="AngelCandles - Torna alla home"><img class="brand-wordmark" src="<?php echo esc_url($angel_assets . '12b26-small.webp'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
             <div class="social-links" aria-label="<?php esc_attr_e('Canali social', 'angel-candles'); ?>">
                 <a href="https://www.facebook.com/angelcandles.it" target="_blank" rel="noopener noreferrer" aria-label="Facebook AngelCandles"><img src="<?php echo esc_url($angel_assets . '2da19.webp'); ?>" alt=""></a>
                 <a href="https://www.instagram.com/angelcandles.it/" target="_blank" rel="noopener noreferrer" aria-label="Instagram AngelCandles"><img src="<?php echo esc_url($angel_assets . '8246d.webp'); ?>" alt=""></a>
