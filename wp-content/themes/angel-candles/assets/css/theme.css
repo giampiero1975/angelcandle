@@ -1,51 +1,49 @@
-
 @font-face {
   font-family: "Cormorant Garamond:Bold";
-  src: url("https://static.figma.com/font/CormorantGaramond_wght__1") format("woff2");
+  src: url("../fonts/CormorantGaramond_wght__1.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Inder:Regular";
-  src: url("https://static.figma.com/font/Inder-Regular_1") format("woff2");
+  src: url("../fonts/Inder-Regular_1.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Inria Serif:Bold";
-  src: url("https://static.figma.com/font/InriaSerif-Bold_1") format("woff2");
+  src: url("../fonts/InriaSerif-Bold_1.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
-}
-
-@font-face {
-  font-family: "Inria Serif:Regular";
-  src: url("https://static.figma.com/font/InriaSerif-Regular_1") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Inter:Regular";
-  src: url("https://static.figma.com/font/Inter_1") format("woff2");
-  font-style: normal;
-  font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Manrope:Regular";
-  src: url("https://static.figma.com/font/Manrope_wght__1") format("woff2");
+  src: url("../fonts/Manrope_wght__1.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Meddon:Regular";
-  src: url("https://static.figma.com/font/Meddon_1") format("woff2");
+  src: url("../fonts/Meddon_1.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/CormorantGaramond_wght__1.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
 }
 
 :root {
