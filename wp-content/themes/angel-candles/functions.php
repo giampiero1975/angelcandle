@@ -41,6 +41,32 @@ function angel_candles_assets(): void
 }
 add_action('wp_enqueue_scripts', 'angel_candles_assets');
 
+/**
+ * Homepage experiment: inline the small main stylesheet to remove its
+ * render-blocking network request without changing CSS order or appearance.
+ * Other pages keep the normal, browser-cacheable stylesheet.
+ */
+function angel_candles_inline_home_css(string $html, string $handle): string
+{
+    if ($handle !== 'angel-candles-theme' || !is_front_page()) {
+        return $html;
+    }
+
+    $path = get_template_directory() . '/assets/css/theme.css';
+    if (!is_readable($path)) {
+        return $html;
+    }
+
+    $css = file_get_contents($path);
+    if ($css === false || $css === '') {
+        return $html;
+    }
+
+    return '<style id="angel-candles-theme-inline-css">' . str_ireplace('</style', '<\\/style', $css) . '</style>' . "\\n";
+}
+add_filter('style_loader_tag', 'angel_candles_inline_home_css', 10, 2);
+
+
 function angel_candles_menu_fallback(): void
 {
     $creazioni_url = get_post_type_archive_link('angel_creazione');
