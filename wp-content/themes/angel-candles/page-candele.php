@@ -8,10 +8,10 @@ get_header();
 $assets = get_template_directory_uri() . '/assets/images/';
 
 $qualities = array(
-    array('24d40.png', __('Fatte a mano', 'angel-candles'), __('Ogni candela nasce artigianalmente, una alla volta, con cura per forme, finiture e dettagli che rendono ogni pezzo unico.', 'angel-candles')),
-    array('2ed11.png', __('Personalizzate', 'angel-candles'), __('Colori, dettagli e confezioni possono essere abbinati allo stile, al tema o all’occasione per creare una candela davvero personale.', 'angel-candles')),
-    array('d2538.png', __('Idee regalo', 'angel-candles'), __('Piccoli pensieri creati a mano, da personalizzare nei dettagli e nella confezione per un regalo pensato davvero per chi lo riceve.', 'angel-candles')),
-    array('0c759.png', __('Atmosfere speciali', 'angel-candles'), __('Una luce calda e delicata per decorare un angolo di casa e creare un’atmosfera raccolta e accogliente.', 'angel-candles')),
+    array('24d40.webp', __('Fatte a mano', 'angel-candles'), __('Ogni candela nasce artigianalmente, una alla volta, con cura per forme, finiture e dettagli che rendono ogni pezzo unico.', 'angel-candles')),
+    array('2ed11.webp', __('Personalizzate', 'angel-candles'), __('Colori, dettagli e confezioni possono essere abbinati allo stile, al tema o all’occasione per creare una candela davvero personale.', 'angel-candles')),
+    array('d2538.webp', __('Idee regalo', 'angel-candles'), __('Piccoli pensieri creati a mano, da personalizzare nei dettagli e nella confezione per un regalo pensato davvero per chi lo riceve.', 'angel-candles')),
+    array('0c759.webp', __('Atmosfere speciali', 'angel-candles'), __('Una luce calda e delicata per decorare un angolo di casa e creare un’atmosfera raccolta e accogliente.', 'angel-candles')),
 );
 ?>
 
@@ -27,7 +27,7 @@ $qualities = array(
             </a>
         </div>
         <figure class="candele-hero-image">
-            <img src="<?php echo esc_url($assets . '4f753.png'); ?>" alt="<?php esc_attr_e('Candela floreale accesa in un allestimento botanico', 'angel-candles'); ?>">
+            <img src="<?php echo esc_url($assets . '4f753.webp'); ?>" alt="<?php esc_attr_e('Candela floreale accesa in un allestimento botanico', 'angel-candles'); ?>">
         </figure>
     </section>
 
@@ -49,7 +49,7 @@ $qualities = array(
 
     <section class="candele-feature">
         <figure class="candele-feature-image">
-            <img src="<?php echo esc_url($assets . 'e49e5.png'); ?>" alt="<?php esc_attr_e('Candela confezionata tra lavanda e fiori', 'angel-candles'); ?>">
+            <img src="<?php echo esc_url($assets . 'e49e5.webp'); ?>" alt="<?php esc_attr_e('Candela confezionata tra lavanda e fiori', 'angel-candles'); ?>">
         </figure>
         <div class="candele-feature-copy">
             <p class="candele-eyebrow"><?php esc_html_e('Pensata per te', 'angel-candles'); ?></p>
