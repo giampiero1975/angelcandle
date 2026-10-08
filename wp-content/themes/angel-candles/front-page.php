@@ -17,7 +17,7 @@ $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/cre
 ?>
 <main id="home">
     <section class="hero" aria-labelledby="hero-title">
-        <img src="<?php echo esc_url($angel_assets . '4f753.webp'); ?>" alt="<?php esc_attr_e('Candela floreale accesa in un allestimento botanico', 'angel-candles'); ?>">
+        <img src="<?php echo esc_url($angel_assets . '4f753.webp'); ?>" alt="<?php esc_attr_e('Candela floreale accesa in un allestimento botanico', 'angel-candles'); ?>" fetchpriority="high" loading="eager" decoding="async">
         <h1 id="hero-title"><span class="hero-accent"><?php esc_html_e('Create', 'angel-candles'); ?></span> <?php esc_html_e('per', 'angel-candles'); ?><br><?php esc_html_e('accendere un', 'angel-candles'); ?><br><?php esc_html_e('momento speciale.', 'angel-candles'); ?></h1>
     </section>
 
