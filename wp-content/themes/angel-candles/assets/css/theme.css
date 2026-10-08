@@ -745,3 +745,15 @@ footer {
 .brand-wordmark-link .brand-wordmark { position: static; left: auto; transform: none; width: 100%; }
 @media (max-width: 900px) { .brand-mark-link { width: 105px; height: 105px; } }
 @media (max-width: 600px) { .brand-mark-link { position: absolute; left: 0; width: 76px; height: 76px; } .brand-mark-link .brand-mark { position: static; left: auto; } .brand-wordmark-link { width: 52vw; } }
+
+/* Footer copyright: desktop split layout and champagne studio credit */
+@media (min-width: 601px) {
+  .copyright { padding: 0 max(2rem, calc((100vw - 1300px) / 2)); }
+  .copyright-text { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 1.5rem; text-align: left; }
+  .copyright .powered-by { margin: 0; white-space: nowrap; }
+}
+.copyright .powered-by a { color: #e8d4bd; font-size: 1.05rem; font-weight: 700; text-decoration: none; }
+.copyright .powered-by a:hover { color: #fff1de; text-decoration: none; }
+@media (max-width: 600px) {
+  .copyright .powered-by a { font-size: .98rem; }
+}
