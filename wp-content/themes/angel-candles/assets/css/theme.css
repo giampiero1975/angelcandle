@@ -737,3 +737,11 @@ footer {
   .brand-row .mobile-menu-toggle > span:not(.menu-toggle-label) { background: var(--cream); }
   .brand-row .mobile-menu-toggle .menu-toggle-label { color: var(--cream); font-size: .6rem; }
 }
+
+/* Clickable brand elements, preserving original header positions */
+.brand-mark-link { display: block; width: 150px; height: 150px; flex: none; }
+.brand-mark-link .brand-mark { display: block; }
+.brand-wordmark-link { position: absolute; left: 50%; transform: translateX(-50%); width: min(34vw, 480px); display: block; }
+.brand-wordmark-link .brand-wordmark { position: static; left: auto; transform: none; width: 100%; }
+@media (max-width: 900px) { .brand-mark-link { width: 105px; height: 105px; } }
+@media (max-width: 600px) { .brand-mark-link { position: absolute; left: 0; width: 76px; height: 76px; } .brand-mark-link .brand-mark { position: static; left: auto; } .brand-wordmark-link { width: 52vw; } }
