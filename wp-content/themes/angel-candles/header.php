@@ -18,8 +18,8 @@
                 <a href="https://www.instagram.com/angelcandles.it/" target="_blank" rel="noopener noreferrer" aria-label="Instagram AngelCandles"><img src="<?php echo esc_url($angel_assets . '8246d.png'); ?>" alt=""></a>
                 <a href="https://wa.me/393476806154?text=Ciao%2C%20vorrei%20avere%20informazioni%20su%20una%20creazione%20AngelCandles" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AngelCandles"><img src="<?php echo esc_url($angel_assets . '04409.png'); ?>" alt=""></a>
             </div>
+            <button class="mobile-menu-toggle" type="button" aria-controls="angel-primary-nav" aria-expanded="false" aria-label="Apri il menu"><span></span><span></span><span></span><span class="menu-toggle-label">Menu</span></button>
         </div>
-        <button class="mobile-menu-toggle" type="button" aria-controls="angel-primary-nav" aria-expanded="false" aria-label="Apri il menu"><span></span><span></span><span></span><span class="menu-toggle-label">Menu</span></button>
         <?php
         wp_nav_menu(
             array(
