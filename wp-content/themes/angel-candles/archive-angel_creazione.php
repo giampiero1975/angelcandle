@@ -61,7 +61,7 @@ $categories = get_terms([
                 }
 
                 $main_image = $display_image_id
-                    ? wp_get_attachment_image_url($display_image_id, 'large')
+                    ? angel_candles_webp_upload_url((string) wp_get_attachment_image_url($display_image_id, 'large'))
                     : '';
                 ?>
 
@@ -104,7 +104,7 @@ $categories = get_terms([
                         <div class="creazione-gallery-data" hidden>
                             <?php foreach ($lightbox_ids as $image_id) : ?>
                                 <?php
-                                $full = wp_get_attachment_image_url($image_id, 'full');
+                                $full = angel_candles_webp_upload_url((string) wp_get_attachment_image_url($image_id, 'full'));
                                 if (!$full) {
                                     continue;
                                 }
