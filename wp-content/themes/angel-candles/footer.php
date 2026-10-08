@@ -40,9 +40,9 @@ $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/cre
             <span class="footer-divider footer-divider-three" aria-hidden="true"><img src="<?php echo esc_url($angel_assets . '3ff7f.svg'); ?>" alt=""></span>
         </div>
         <div class="copyright">
-            <img class="footer-flower footer-flower-left" src="<?php echo esc_url($angel_assets . 'f314c.webp'); ?>" alt="">
+            <img class="footer-flower footer-flower-left" src="<?php echo esc_url($angel_assets . 'f314c-small.webp'); ?>" alt="">
             <div class="copyright-text"><p>© <?php echo esc_html(wp_date('Y')); ?> AngelCandles · <?php esc_html_e('Tutti i diritti riservati', 'angel-candles'); ?></p><p class="powered-by">Powered by <a href="https://byoursite.com/" target="_blank" rel="noopener noreferrer">BYOURSITE</a></p></div>
-            <img class="footer-flower footer-flower-right" src="<?php echo esc_url($angel_assets . '3e54a.webp'); ?>" alt="">
+            <img class="footer-flower footer-flower-right" src="<?php echo esc_url($angel_assets . '3e54a-small.webp'); ?>" alt="">
         </div>
     </footer>
 </div>
