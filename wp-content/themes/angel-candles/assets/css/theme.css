@@ -762,3 +762,8 @@ footer {
 @media (min-width: 601px) {
   .copyright-text { width: min(100%, 1080px); margin-inline: auto; }
 }
+
+/* Nudge the BYOURSITE credit further inward on desktop */
+@media (min-width: 601px) {
+  .copyright .powered-by { margin-right: 65px; }
+}
