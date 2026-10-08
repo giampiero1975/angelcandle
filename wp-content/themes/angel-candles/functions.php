@@ -53,3 +53,29 @@ function angel_candles_menu_fallback(): void
     echo '<a href="' . esc_url(home_url('/contatti/')) . '">Contatti</a>';
     echo '</nav>';
 }
+
+/** Serve WebP variants for uploaded images when a matching file exists. */
+function angel_candles_webp_upload_url(string $url): string
+{
+    if ($url === '') {
+        return $url;
+    }
+    $uploads = wp_get_upload_dir();
+    if (!empty($uploads['error'])) {
+        return $url;
+    }
+    $base_url = rtrim($uploads['baseurl'], '/');
+    $base_dir = rtrim($uploads['basedir'], '/');
+    if (strpos($url, $base_url . '/') !== 0) {
+        return $url;
+    }
+    $relative = substr($url, strlen($base_url));
+    if (!preg_match('/\\.(?:png|jpe?g)$/i', $relative)) {
+        return $url;
+    }
+    $webp_relative = preg_replace('/\\.(?:png|jpe?g)$/i', '.webp', $relative);
+    if ($webp_relative && is_file($base_dir . $webp_relative)) {
+        return $base_url . $webp_relative;
+    }
+    return $url;
+}
