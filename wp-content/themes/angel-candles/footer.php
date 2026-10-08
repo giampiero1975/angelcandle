@@ -5,7 +5,7 @@ $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/cre
     <footer>
         <div class="footer-grid">
             <div class="footer-signature">
-                <img src="<?php echo esc_url($angel_assets . 'd66c7.webp'); ?>" alt="<?php esc_attr_e('Monogramma Angel Candles', 'angel-candles'); ?>">
+                <img src="<?php echo esc_url($angel_assets . 'd66c7-small.webp'); ?>" alt="<?php esc_attr_e('Monogramma Angel Candles', 'angel-candles'); ?>">
                 <p><?php esc_html_e('Ogni candela racconta una emozione', 'angel-candles'); ?></p>
             </div>
             <section>
