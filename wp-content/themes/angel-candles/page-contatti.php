@@ -17,7 +17,7 @@ $status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) :
             <p><?php esc_html_e('Un regalo, un evento o una candela pensata per un momento speciale? Scrivi qualche dettaglio: da una semplice idea può nascere qualcosa di unico.', 'angel-candles'); ?></p>
         </div>
         <figure class="contatti-hero-image">
-            <img src="<?php echo esc_url($assets . 'e49e5.png'); ?>" alt="<?php esc_attr_e('Creazione AngelCandles tra fiori e lavanda', 'angel-candles'); ?>">
+            <img src="<?php echo esc_url($assets . 'e49e5.webp'); ?>" alt="<?php esc_attr_e('Creazione AngelCandles tra fiori e lavanda', 'angel-candles'); ?>">
         </figure>
     </section>
 
