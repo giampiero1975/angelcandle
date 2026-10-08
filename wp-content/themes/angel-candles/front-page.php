@@ -2,10 +2,10 @@
 get_header();
 $angel_assets = get_template_directory_uri() . '/assets/images/';
 $features = array(
-    array('24d40.webp', __('Fatte a mano', 'angel-candles')),
-    array('2ed11.webp', __('Personalizzate', 'angel-candles')),
-    array('d2538.webp', __('Eventi & cerimonie', 'angel-candles')),
-    array('0c759.webp', __('Atmosfere speciali', 'angel-candles')),
+    array('24d40-small.webp', __('Fatte a mano', 'angel-candles')),
+    array('2ed11-small.webp', __('Personalizzate', 'angel-candles')),
+    array('d2538-small.webp', __('Eventi & cerimonie', 'angel-candles')),
+    array('0c759-small.webp', __('Atmosfere speciali', 'angel-candles')),
 );
 $creations = array(
     array('f4286.webp', __('Decorative', 'angel-candles'), 'decorative'),
