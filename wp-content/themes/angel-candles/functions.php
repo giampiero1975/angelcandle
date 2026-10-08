@@ -66,7 +66,7 @@ function angel_candles_inline_home_css(string $html, string $handle): string
     $fonts_url = esc_url_raw(get_template_directory_uri() . '/assets/fonts/');
     $css = str_replace('../fonts/', $fonts_url, $css);
 
-    return '<style id="angel-candles-theme-inline-css">' . str_ireplace('</style', '<\\/style', $css) . '</style>' . "\\n";
+    return '<style id="angel-candles-theme-inline-css">' . str_ireplace('</style', '<\\/style', $css) . '</style>' . "\n";
 }
 add_filter('style_loader_tag', 'angel_candles_inline_home_css', 10, 2);
 
