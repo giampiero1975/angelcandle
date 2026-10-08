@@ -717,3 +717,23 @@ footer {
   .site-header .main-nav li + li { border-top: 1px solid #e3ddcf; }
   .copyright { padding-top: .75rem; padding-bottom: .75rem; }
 }
+
+/* Mobile hamburger replaces the header social icons */
+@media (max-width: 600px) {
+  .brand-row .social-links { display: none; }
+  .brand-row .mobile-menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    min-height: 48px;
+    padding: 4px;
+    background: transparent;
+    color: var(--cream);
+    z-index: 2;
+  }
+  .brand-row .mobile-menu-toggle > span:not(.menu-toggle-label) { background: var(--cream); }
+  .brand-row .mobile-menu-toggle .menu-toggle-label { color: var(--cream); font-size: .6rem; }
+}
