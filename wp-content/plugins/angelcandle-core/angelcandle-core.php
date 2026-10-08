@@ -180,3 +180,60 @@ add_action('init', 'angelcandle_register_creazioni_taxonomy');
 
 require_once __DIR__ . '/includes/creazioni-gallery.php';
 require_once __DIR__ . '/includes/contact-form.php';
+
+
+/**
+ * Converte i nuovi caricamenti JPEG/PNG della Libreria media in WebP.
+ * Si interviene prima che WordPress crei l'allegato e le miniature:
+ * cosi database, URL e metadati puntano direttamente al file WebP.
+ * I media gia presenti e le immagini statiche del tema non cambiano.
+ */
+function angelcandle_convert_uploaded_image_to_webp(array $upload): array
+{
+    if (!empty($upload['error']) || empty($upload['file']) || empty($upload['url'])) {
+        return $upload;
+    }
+
+    $mime = $upload['type'] ?? '';
+    if (!in_array($mime, ['image/jpeg', 'image/png'], true)) {
+        return $upload;
+    }
+
+    $source = $upload['file'];
+    if (!is_file($source) || !is_readable($source) || !function_exists('wp_get_image_editor')) {
+        return $upload;
+    }
+
+    $editor = wp_get_image_editor($source);
+    if (is_wp_error($editor)) {
+        return $upload;
+    }
+
+    $directory = dirname($source);
+    $filename = wp_unique_filename(
+        $directory,
+        pathinfo($source, PATHINFO_FILENAME) . '.webp'
+    );
+    $destination = trailingslashit($directory) . $filename;
+    $editor->set_quality(82);
+    $saved = $editor->save($destination, 'image/webp');
+
+    if (is_wp_error($saved) || empty($saved['path']) || !is_file($saved['path'])) {
+        return $upload;
+    }
+
+    $new_path = $saved['path'];
+    $new_url = trailingslashit(dirname($upload['url'])) . rawurlencode(basename($new_path));
+
+    // Elimina l'originale soltanto dopo la conversione riuscita.
+    if ($new_path !== $source) {
+        wp_delete_file($source);
+    }
+
+    $upload['file'] = $new_path;
+    $upload['url'] = $new_url;
+    $upload['type'] = 'image/webp';
+
+    return $upload;
+}
+add_filter('wp_handle_upload', 'angelcandle_convert_uploaded_image_to_webp', 20);
