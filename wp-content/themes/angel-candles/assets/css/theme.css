@@ -767,3 +767,17 @@ footer {
 @media (min-width: 601px) {
   .copyright .powered-by { margin-right: 65px; }
 }
+
+/* Mobile copyright: reserve space for both lines and keep floral art behind text */
+@media (max-width: 600px) {
+  .copyright {
+    box-sizing: border-box;
+    min-height: 145px;
+    padding: 24px 100px 30px;
+    align-content: center;
+  }
+  .copyright-text { position: relative; z-index: 2; width: 100%; }
+  .copyright-text p { line-height: 1.45; }
+  .copyright .powered-by { margin-top: 10px; }
+  .copyright .footer-flower { z-index: 0; pointer-events: none; }
+}
