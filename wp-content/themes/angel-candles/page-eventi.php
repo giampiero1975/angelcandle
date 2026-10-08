@@ -12,7 +12,7 @@ $creazioni_url = get_post_type_archive_link('angel_creazione');
 <main class="eventi-page">
     <section class="eventi-hero" aria-labelledby="eventi-title">
         <figure class="eventi-hero-image">
-            <img src="<?php echo esc_url($assets . 'e49e5.png'); ?>" alt="<?php esc_attr_e('Candela confezionata per un evento tra fiori e lavanda', 'angel-candles'); ?>">
+            <img src="<?php echo esc_url($assets . 'e49e5.webp'); ?>" alt="<?php esc_attr_e('Candela confezionata per un evento tra fiori e lavanda', 'angel-candles'); ?>">
         </figure>
         <div class="eventi-hero-copy">
             <span class="eventi-kicker"><?php esc_html_e('Eventi & cerimonie', 'angel-candles'); ?></span>
@@ -61,7 +61,7 @@ $creazioni_url = get_post_type_archive_link('angel_creazione');
             </div>
         </div>
         <figure class="eventi-personalizzazione-image">
-            <img src="<?php echo esc_url($assets . '4f753.png'); ?>" alt="<?php esc_attr_e('Candela decorativa floreale AngelCandles', 'angel-candles'); ?>">
+            <img src="<?php echo esc_url($assets . '4f753.webp'); ?>" alt="<?php esc_attr_e('Candela decorativa floreale AngelCandles', 'angel-candles'); ?>">
         </figure>
     </section>
 
