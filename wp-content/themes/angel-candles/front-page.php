@@ -8,10 +8,10 @@ $features = array(
     array('0c759-small.webp', __('Atmosfere speciali', 'angel-candles')),
 );
 $creations = array(
-    array('f4286.webp', __('Decorative', 'angel-candles'), 'decorative'),
-    array('f5852.webp', __('Bomboniere', 'angel-candles'), 'bomboniere'),
-    array('26b64.webp', __('Festività', 'angel-candles'), 'festivita'),
-    array('41f1f.webp', __('Idee regalo', 'angel-candles'), 'idee-regalo'),
+    array('f4286-small.webp', __('Decorative', 'angel-candles'), 'decorative'),
+    array('f5852-small.webp', __('Bomboniere', 'angel-candles'), 'bomboniere'),
+    array('26b64-small.webp', __('Festività', 'angel-candles'), 'festivita'),
+    array('41f1f-small.webp', __('Idee regalo', 'angel-candles'), 'idee-regalo'),
 );
 $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/creazioni/');
 ?>
