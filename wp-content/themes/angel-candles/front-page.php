@@ -35,7 +35,7 @@ $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/cre
         <div class="creation-grid">
             <?php foreach ($creations as $creation) : ?>
                 <a class="creation-card" href="<?php echo esc_url(add_query_arg('categoria', $creation[2], $creazioni_url)); ?>">
-                    <img src="<?php echo esc_url($angel_assets . $creation[0]); ?>" alt="<?php echo esc_attr(sprintf(__('Candela %s', 'angel-candles'), strtolower($creation[1]))); ?>">
+                    <img src="<?php echo esc_url($angel_assets . $creation[0]); ?>" alt="<?php echo esc_attr(sprintf(__('Candela %s', 'angel-candles'), strtolower($creation[1]))); ?>" loading="lazy" decoding="async">
                     <h3><?php echo esc_html($creation[1]); ?></h3>
                 </a>
             <?php endforeach; ?>
@@ -43,12 +43,12 @@ $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/cre
     </section>
 
     <section class="story" aria-labelledby="story-title">
-        <img src="<?php echo esc_url($angel_assets . 'e49e5.webp'); ?>" alt="<?php esc_attr_e('Candela floreale confezionata tra lavanda e fiori', 'angel-candles'); ?>">
+        <img src="<?php echo esc_url($angel_assets . 'e49e5.webp'); ?>" alt="<?php esc_attr_e('Candela floreale confezionata tra lavanda e fiori', 'angel-candles'); ?>" loading="lazy" decoding="async">
         <div class="story-content">
             <h2 id="story-title"><?php esc_html_e('Ogni candela ha', 'angel-candles'); ?><br><?php esc_html_e('qualcosa da raccontare', 'angel-candles'); ?></h2>
             <a class="cta" href="<?php echo esc_url(home_url('/emozioni/')); ?>">
                 <?php esc_html_e('Scopri Angelcandle', 'angel-candles'); ?>
-                <img src="<?php echo esc_url($angel_assets . '2baf6.svg'); ?>" alt="">
+                <img src="<?php echo esc_url($angel_assets . '2baf6.svg'); ?>" alt="" loading="lazy" decoding="async">
             </a>
         </div>
     </section>
