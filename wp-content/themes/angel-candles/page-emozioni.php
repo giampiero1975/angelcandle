@@ -16,7 +16,7 @@ $assets = get_template_directory_uri() . '/assets/images/';
             <p><?php esc_html_e('Una luce può cambiare l’atmosfera di una stanza, accompagnare un ricordo o rendere speciale un gesto semplice. AngelCandles nasce da questa idea: dare forma a piccoli momenti da custodire.', 'angel-candles'); ?></p>
         </div>
         <figure class="emozioni-hero-image">
-            <img src="<?php echo esc_url($assets . '4f753.png'); ?>" alt="<?php esc_attr_e('Candela accesa in un’atmosfera floreale', 'angel-candles'); ?>">
+            <img src="<?php echo esc_url($assets . '4f753.webp'); ?>" alt="<?php esc_attr_e('Candela accesa in un’atmosfera floreale', 'angel-candles'); ?>">
         </figure>
     </section>
 
@@ -52,7 +52,7 @@ $assets = get_template_directory_uri() . '/assets/images/';
 
     <section class="emozioni-finale">
         <figure class="emozioni-finale-image">
-            <img src="<?php echo esc_url($assets . 'e49e5.png'); ?>" alt="<?php esc_attr_e('Creazione AngelCandles tra fiori e lavanda', 'angel-candles'); ?>">
+            <img src="<?php echo esc_url($assets . 'e49e5.webp'); ?>" alt="<?php esc_attr_e('Creazione AngelCandles tra fiori e lavanda', 'angel-candles'); ?>">
         </figure>
         <div class="emozioni-finale-copy">
             <p class="emozioni-eyebrow"><?php esc_html_e('Da un’idea a una luce', 'angel-candles'); ?></p>
