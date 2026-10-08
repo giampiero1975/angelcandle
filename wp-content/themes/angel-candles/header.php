@@ -11,12 +11,12 @@
 <div class="site-shell">
     <header class="site-header">
         <div class="brand-row">
-            <a class="brand-mark-link" href="<?php echo esc_url(home_url('/')); ?>" aria-label="AngelCandles - Torna alla home"><img class="brand-mark" src="<?php echo esc_url($angel_assets . '26594.png'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
-            <a class="brand-wordmark-link" href="<?php echo esc_url(home_url('/')); ?>" aria-label="AngelCandles - Torna alla home"><img class="brand-wordmark" src="<?php echo esc_url($angel_assets . '12b26.png'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
+            <a class="brand-mark-link" href="<?php echo esc_url(home_url('/')); ?>" aria-label="AngelCandles - Torna alla home"><img class="brand-mark" src="<?php echo esc_url($angel_assets . '26594.webp'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
+            <a class="brand-wordmark-link" href="<?php echo esc_url(home_url('/')); ?>" aria-label="AngelCandles - Torna alla home"><img class="brand-wordmark" src="<?php echo esc_url($angel_assets . '12b26.webp'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
             <div class="social-links" aria-label="<?php esc_attr_e('Canali social', 'angel-candles'); ?>">
-                <a href="https://www.facebook.com/angelcandles.it" target="_blank" rel="noopener noreferrer" aria-label="Facebook AngelCandles"><img src="<?php echo esc_url($angel_assets . '2da19.png'); ?>" alt=""></a>
-                <a href="https://www.instagram.com/angelcandles.it/" target="_blank" rel="noopener noreferrer" aria-label="Instagram AngelCandles"><img src="<?php echo esc_url($angel_assets . '8246d.png'); ?>" alt=""></a>
-                <a href="https://wa.me/393476806154?text=Ciao%2C%20vorrei%20avere%20informazioni%20su%20una%20creazione%20AngelCandles" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AngelCandles"><img src="<?php echo esc_url($angel_assets . '04409.png'); ?>" alt=""></a>
+                <a href="https://www.facebook.com/angelcandles.it" target="_blank" rel="noopener noreferrer" aria-label="Facebook AngelCandles"><img src="<?php echo esc_url($angel_assets . '2da19.webp'); ?>" alt=""></a>
+                <a href="https://www.instagram.com/angelcandles.it/" target="_blank" rel="noopener noreferrer" aria-label="Instagram AngelCandles"><img src="<?php echo esc_url($angel_assets . '8246d.webp'); ?>" alt=""></a>
+                <a href="https://wa.me/393476806154?text=Ciao%2C%20vorrei%20avere%20informazioni%20su%20una%20creazione%20AngelCandles" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AngelCandles"><img src="<?php echo esc_url($angel_assets . '04409.webp'); ?>" alt=""></a>
             </div>
             <button class="mobile-menu-toggle" type="button" aria-controls="angel-primary-nav" aria-expanded="false" aria-label="Apri il menu"><span></span><span></span><span></span><span class="menu-toggle-label">Menu</span></button>
         </div>
