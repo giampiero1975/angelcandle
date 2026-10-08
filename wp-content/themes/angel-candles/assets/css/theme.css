@@ -781,3 +781,8 @@ footer {
   .copyright .powered-by { margin-top: 10px; }
   .copyright .footer-flower { z-index: 0; pointer-events: none; }
 }
+
+/* A little more breathing room below the mobile footer credit */
+@media (max-width: 600px) {
+  .copyright { min-height: 165px; padding-bottom: 46px; }
+}
