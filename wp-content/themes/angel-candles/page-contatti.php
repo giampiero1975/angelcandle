@@ -14,7 +14,7 @@ $status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) :
         <div class="contatti-hero-copy">
             <span class="contatti-kicker"><?php esc_html_e('Contatti', 'angel-candles'); ?></span>
             <h1 id="contatti-title"><?php esc_html_e('Raccontami la tua idea', 'angel-candles'); ?></h1>
-            <p><?php esc_html_e('Un regalo, un evento o una candela pensata per un momento speciale? Scrivi qualche dettaglio: da una semplice idea può nascere qualcosa di unico.', 'angel-candles'); ?></p>
+            <p><?php esc_html_e('Un regalo, un evento o semplicemente la passione per le candele artigianali? Scopri le nostre creazioni e lasciati ispirare da colori, forme e atmosfere uniche.', 'angel-candles'); ?></p>
         </div>
         <figure class="contatti-hero-image">
             <img src="<?php echo esc_url($assets . 'e49e5.webp'); ?>" alt="<?php esc_attr_e('Creazione AngelCandles tra fiori e lavanda', 'angel-candles'); ?>">
@@ -24,7 +24,7 @@ $status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) :
     <section class="contatti-content">
         <div class="contatti-form-wrap">
             <p class="contatti-eyebrow"><?php esc_html_e('Scrivi ad AngelCandles', 'angel-candles'); ?></p>
-            <h2><?php esc_html_e('Parliamo della tua idea', 'angel-candles'); ?></h2>
+            <h2><?php esc_html_e('Scrivici, siamo felici di ascoltarti', 'angel-candles'); ?></h2>
 
             <?php if ($status === 'sent') : ?>
                 <div class="contatti-alert contatti-alert-success" role="status"><?php esc_html_e('Messaggio inviato. Grazie! Ti risponderemo appena possibile.', 'angel-candles'); ?></div>
@@ -57,9 +57,9 @@ $status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) :
                     <label for="ac-reason"><?php esc_html_e('Motivo del contatto', 'angel-candles'); ?></label>
                     <select id="ac-reason" name="reason" required>
                         <option value=""><?php esc_html_e('Seleziona…', 'angel-candles'); ?></option>
-                        <option value="candela"><?php esc_html_e('Candela personalizzata', 'angel-candles'); ?></option>
-                        <option value="evento"><?php esc_html_e('Evento o cerimonia', 'angel-candles'); ?></option>
-                        <option value="regalo"><?php esc_html_e('Idea regalo', 'angel-candles'); ?></option>
+                        <option value="candela"><?php esc_html_e('Curiosità sulle creazioni', 'angel-candles'); ?></option>
+                        <option value="evento"><?php esc_html_e('Ispirazioni per eventi', 'angel-candles'); ?></option>
+                        <option value="regalo"><?php esc_html_e('Ispirazioni per un regalo', 'angel-candles'); ?></option>
                         <option value="altro"><?php esc_html_e('Altro', 'angel-candles'); ?></option>
                     </select>
                 </div>
@@ -85,11 +85,11 @@ $status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) :
 
         <aside class="contatti-side">
             <p class="contatti-eyebrow"><?php esc_html_e('AngelCandles', 'angel-candles'); ?></p>
-            <h2><?php esc_html_e('Ogni richiesta parte da una storia diversa.', 'angel-candles'); ?></h2>
-            <p><?php esc_html_e('Per aiutarti al meglio, racconta l’occasione, i colori che immagini, lo stile e — se già la conosci — la quantità indicativa. Non servono idee perfette: possiamo partire anche da pochi dettagli.', 'angel-candles'); ?></p>
+            <h2><?php esc_html_e('Ogni creazione nasce da un'ispirazione.', 'angel-candles'); ?></h2>
+            <p><?php esc_html_e('Dietro ogni candela ci sono passione, creatività e attenzione ai dettagli. Hai una curiosità, un suggerimento o desideri conoscere meglio il mondo AngelCandle? Raccontacelo!', 'angel-candles'); ?></p>
             <div class="contatti-side-note">
                 <strong><?php esc_html_e('Per eventi e cerimonie', 'angel-candles'); ?></strong>
-                <span><?php esc_html_e('Indica anche la data prevista: aiuta a valutare tempi e possibilità di realizzazione.', 'angel-candles'); ?></span>
+                <span><?php esc_html_e('Lasciati ispirare dalle nostre creazioni dedicate ai momenti speciali: idee, colori e atmosfere per ogni occasione da ricordare.', 'angel-candles'); ?></span>
             </div>
         </aside>
     </section>
