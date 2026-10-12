@@ -85,7 +85,7 @@ $status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) :
 
         <aside class="contatti-side">
             <p class="contatti-eyebrow"><?php esc_html_e('AngelCandles', 'angel-candles'); ?></p>
-            <h2><?php esc_html_e('Ogni creazione nasce da un'ispirazione.', 'angel-candles'); ?></h2>
+            <h2><?php esc_html_e('Ogni creazione nasce da un’ispirazione.', 'angel-candles'); ?></h2>
             <p><?php esc_html_e('Dietro ogni candela ci sono passione, creatività e attenzione ai dettagli. Hai una curiosità, un suggerimento o desideri conoscere meglio il mondo AngelCandle? Raccontacelo!', 'angel-candles'); ?></p>
             <div class="contatti-side-note">
                 <strong><?php esc_html_e('Per eventi e cerimonie', 'angel-candles'); ?></strong>
