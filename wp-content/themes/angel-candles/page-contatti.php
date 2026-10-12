@@ -89,7 +89,7 @@ $status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) :
             <p><?php esc_html_e('Dietro ogni candela ci sono passione, creatività e attenzione ai dettagli. Hai una curiosità, un suggerimento o desideri conoscere meglio il mondo AngelCandle? Raccontacelo!', 'angel-candles'); ?></p>
             <div class="contatti-side-note">
                 <strong><?php esc_html_e('Per eventi e cerimonie', 'angel-candles'); ?></strong>
-                <span><?php esc_html_e('Lasciati ispirare dalle nostre creazioni dedicate ai momenti speciali: idee, colori e atmosfere per ogni occasione da ricordare.', 'angel-candles'); ?></span>
+                <span><?php esc_html_e('Ogni occasione speciale merita un’atmosfera unica. Le nostre candele artigianali raccontano emozioni attraverso forme, colori e piccoli dettagli.', 'angel-candles'); ?></span>
             </div>
         </aside>
     </section>
