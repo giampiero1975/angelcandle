@@ -72,7 +72,7 @@ function angelcandle_ecommerce_enabled(): bool
 
 function angelcandle_disable_woocommerce_storefront(): void
 {
-    if (angelcandle_ecommerce_enabled() || !class_exists('WooCommerce')) {
+    if (angelcandle_ecommerce_enabled()) {
         return;
     }
 
@@ -81,8 +81,20 @@ function angelcandle_disable_woocommerce_storefront(): void
         return;
     }
 
-    $to_candele = is_shop() || is_product() || is_product_category() || is_product_tag();
-    $to_home = is_cart() || is_checkout() || is_account_page();
+    // Le pagine WooCommerce importate restano accessibili anche quando
+    // WooCommerce non e installato: intercettarle per slug in ogni caso.
+    $commerce_pages = ['cart', 'checkout', 'my-account', 'carrello', 'cassa', 'mio-account'];
+    $request_path = trim((string) wp_parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
+    $request_slug = basename($request_path);
+    $to_home = is_page($commerce_pages) || in_array($request_slug, $commerce_pages, true);
+
+    // Le funzioni condizionali WooCommerce sono disponibili solo se il
+    // plugin e attivo; in sua assenza non devono bloccare i redirect.
+    $to_candele = false;
+    if (class_exists('WooCommerce')) {
+        $to_candele = is_shop() || is_product() || is_product_category() || is_product_tag();
+        $to_home = $to_home || is_cart() || is_checkout() || is_account_page();
+    }
 
     if ($to_candele) {
         wp_safe_redirect(home_url('/candele/'), 302);
