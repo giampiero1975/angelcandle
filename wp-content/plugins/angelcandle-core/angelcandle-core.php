@@ -88,11 +88,13 @@ function angelcandle_disable_woocommerce_storefront(): void
     $request_slug = basename($request_path);
     $to_home = is_page($commerce_pages) || in_array($request_slug, $commerce_pages, true);
 
+    // Anche /shop/ deve essere protetta quando WooCommerce non e installato.
+    $to_candele = is_page('shop') || $request_slug === 'shop';
+
     // Le funzioni condizionali WooCommerce sono disponibili solo se il
     // plugin e attivo; in sua assenza non devono bloccare i redirect.
-    $to_candele = false;
     if (class_exists('WooCommerce')) {
-        $to_candele = is_shop() || is_product() || is_product_category() || is_product_tag();
+        $to_candele = $to_candele || is_shop() || is_product() || is_product_category() || is_product_tag();
         $to_home = $to_home || is_cart() || is_checkout() || is_account_page();
     }
 
