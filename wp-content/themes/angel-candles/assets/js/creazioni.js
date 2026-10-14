@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!lightbox) return;
     const image = lightbox.querySelector('.creazioni-lightbox-image');
     const title = lightbox.querySelector('.creazioni-lightbox-title');
+    const caption = lightbox.querySelector('.creazioni-lightbox-caption');
     const counter = lightbox.querySelector('.creazioni-lightbox-counter');
     const previous = lightbox.querySelector('.creazioni-lightbox-prev');
     const next = lightbox.querySelector('.creazioni-lightbox-next');
@@ -48,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const slide = slides[currentIndex];
         image.src = slide.src;
         image.alt = slide.alt || title.textContent || '';
+        caption.textContent = slide.title || '';
+        caption.hidden = !slide.title;
         counter.textContent = (currentIndex + 1) + ' / ' + slides.length;
         const multiple = slides.length > 1;
         previous.hidden = !multiple;
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function openLightbox(card, trigger) {
         slides = Array.from(card.querySelectorAll('.creazione-gallery-data [data-src]')).map(function (node) {
-            return {src: node.dataset.src, alt: node.dataset.alt || ''};
+            return {src: node.dataset.src, alt: node.dataset.alt || '', title: node.dataset.title || ''};
         });
         if (!slides.length) return;
         currentIndex = 0;
