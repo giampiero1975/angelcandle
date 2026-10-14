@@ -20,8 +20,10 @@ function angel_candles_assets(): void
     wp_enqueue_style('angel-candles-theme', get_template_directory_uri() . '/assets/css/theme.css', array(), $theme_css_version);
 
     if (is_post_type_archive('angel_creazione') || is_singular('angel_creazione') || is_tax('angel_creazione_categoria')) {
-        wp_enqueue_style('angel-candles-creazioni', get_template_directory_uri() . '/assets/css/creazioni.css', array('angel-candles-theme'), $version);
-        wp_enqueue_script('angel-candles-creazioni', get_template_directory_uri() . '/assets/js/creazioni.js', array(), $version, true);
+        $creazioni_css = get_template_directory() . '/assets/css/creazioni.css';
+        $creazioni_js = get_template_directory() . '/assets/js/creazioni.js';
+        wp_enqueue_style('angel-candles-creazioni', get_template_directory_uri() . '/assets/css/creazioni.css', array('angel-candles-theme'), file_exists($creazioni_css) ? (string) filemtime($creazioni_css) : $version);
+        wp_enqueue_script('angel-candles-creazioni', get_template_directory_uri() . '/assets/js/creazioni.js', array(), file_exists($creazioni_js) ? (string) filemtime($creazioni_js) : $version, true);
     }
     if (is_page('candele') || is_page_template('page-candele.php')) {
         wp_enqueue_style('angel-candles-candele', get_template_directory_uri() . '/assets/css/candele.css', array('angel-candles-theme'), $version);
