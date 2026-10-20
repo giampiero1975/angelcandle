@@ -429,3 +429,25 @@ body.creazioni-lightbox-open {
     line-height: 1.4;
 }
 .creazioni-lightbox-caption[hidden] { display: none; }
+
+/* Titolo e descrizione delle singole fotografie */
+.creazioni-lightbox-details {
+    flex: 0 0 auto;
+    max-width: 100%;
+    max-height: 120px;
+    overflow-y: auto;
+    text-align: center;
+    padding: 0 8px;
+}
+.creazioni-lightbox-details .creazioni-lightbox-caption { margin: 10px 0 0; }
+.creazioni-lightbox-description {
+    margin: 5px 0 0;
+    color: rgba(247, 242, 232, .84);
+    font-size: 14px;
+    line-height: 1.45;
+    white-space: pre-line;
+}
+.creazioni-lightbox-description[hidden] { display: none; }
+.creazioni-lightbox-photo .creazioni-lightbox-image {
+    max-height: calc(100% - 130px);
+}
