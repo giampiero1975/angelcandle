@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const image = lightbox.querySelector('.creazioni-lightbox-image');
     const title = lightbox.querySelector('.creazioni-lightbox-title');
     const caption = lightbox.querySelector('.creazioni-lightbox-caption');
+    const description = lightbox.querySelector('.creazioni-lightbox-description');
     const counter = lightbox.querySelector('.creazioni-lightbox-counter');
     const previous = lightbox.querySelector('.creazioni-lightbox-prev');
     const next = lightbox.querySelector('.creazioni-lightbox-next');
@@ -51,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         image.alt = slide.alt || title.textContent || '';
         caption.textContent = slide.title || '';
         caption.hidden = !slide.title;
+        description.textContent = slide.description || '';
+        description.hidden = !slide.description;
         counter.textContent = (currentIndex + 1) + ' / ' + slides.length;
         const multiple = slides.length > 1;
         previous.hidden = !multiple;
@@ -58,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function openLightbox(card, trigger) {
         slides = Array.from(card.querySelectorAll('.creazione-gallery-data [data-src]')).map(function (node) {
-            return {src: node.dataset.src, alt: node.dataset.alt || '', title: node.dataset.title || ''};
+            return {src: node.dataset.src, alt: node.dataset.alt || '', title: node.dataset.title || '', description: node.dataset.description || ''};
         });
         if (!slides.length) return;
         currentIndex = 0;
