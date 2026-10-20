@@ -113,6 +113,7 @@ $categories = get_terms([
                                     data-src="<?php echo esc_url($full); ?>"
                                     data-alt="<?php echo esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: get_the_title()); ?>"
                                     data-title="<?php echo esc_attr(get_the_title($image_id)); ?>"
+                                    data-description="<?php echo esc_attr(wp_strip_all_tags((string) get_post_field('post_content', $image_id))); ?>"
                                 ></span>
                             <?php endforeach; ?>
                         </div>
@@ -141,7 +142,10 @@ $categories = get_terms([
             <button class="creazioni-lightbox-nav creazioni-lightbox-prev" type="button" aria-label="Immagine precedente">&#8249;</button>
             <div class="creazioni-lightbox-photo">
                 <img class="creazioni-lightbox-image" src="" alt="">
-                <p class="creazioni-lightbox-caption" aria-live="polite"></p>
+                <div class="creazioni-lightbox-details" aria-live="polite">
+                    <p class="creazioni-lightbox-caption"></p>
+                    <p class="creazioni-lightbox-description"></p>
+                </div>
             </div>
             <button class="creazioni-lightbox-nav creazioni-lightbox-next" type="button" aria-label="Immagine successiva">&#8250;</button>
         </div>
