@@ -57,7 +57,7 @@ $categories = get_terms([
 
                 $lightbox_ids = array_values(array_unique(array_filter(array_map('absint', $gallery_ids))));
                 if ($featured_id && !in_array((int) $featured_id, $lightbox_ids, true)) {
-                    array_unshift($lightbox_ids, (int) $featured_id);
+                    $lightbox_ids[] = (int) $featured_id;
                 }
 
                 $main_image = $display_image_id
