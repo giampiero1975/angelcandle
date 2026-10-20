@@ -65,6 +65,7 @@ function angelcandle_creazioni_gallery_render(WP_Post $post): void
                         alt=""
                     >
 
+                    <div class="angelcandle-gallery-controls"><button type="button" class="button angelcandle-gallery-up" aria-label="Sposta foto a sinistra">←</button><button type="button" class="button angelcandle-gallery-down" aria-label="Sposta foto a destra">→</button></div>
                     <button
                         type="button"
                         class="button angelcandle-gallery-remove"
@@ -93,7 +94,7 @@ function angelcandle_creazioni_gallery_render(WP_Post $post): void
         </p>
 
         <p class="description">
-            Seleziona una o più fotografie della creazione.
+            Trascina le fotografie per cambiarne l’ordine, oppure usa le frecce. Salva la creazione per confermare. Seleziona una o più fotografie della creazione.
             Potrai modificarle o rimuoverle in qualsiasi momento.
         </p>
     </div>
@@ -118,6 +119,7 @@ function angelcandle_creazioni_gallery_admin_assets(string $hook): void
     }
 
     wp_enqueue_media();
+    wp_enqueue_script('jquery-ui-sortable');
 
     wp_add_inline_style(
         'wp-admin',
@@ -146,6 +148,11 @@ function angelcandle_creazioni_gallery_admin_assets(string $hook): void
             margin-bottom: 8px;
         }
 
+        .angelcandle-gallery-item { cursor: move; }
+        .angelcandle-gallery-item .button { cursor: pointer; }
+        .angelcandle-gallery-controls { display: flex; gap: 4px; margin-bottom: 6px; }
+        .angelcandle-gallery-controls .button { flex: 1; }
+        .angelcandle-gallery-placeholder { width: 130px; border: 2px dashed #8f9a7b; background: #f7f2e8; box-sizing: border-box; }
         .angelcandle-gallery-remove {
             width: 100%;
         }
@@ -158,6 +165,13 @@ function angelcandle_creazioni_gallery_admin_assets(string $hook): void
         jQuery(function($) {
 
             let frame;
+            $('#angelcandle-gallery-preview').sortable({
+                items: '.angelcandle-gallery-item',
+                cancel: 'button',
+                placeholder: 'angelcandle-gallery-placeholder',
+                tolerance: 'pointer',
+                update: updateGalleryIds
+            });
 
             function updateGalleryIds() {
                 const ids = [];
@@ -226,6 +240,9 @@ function angelcandle_creazioni_gallery_admin_assets(string $hook): void
                             alt: ''
                         }).appendTo(item);
 
+                        const controls = $('<div>', {class: 'angelcandle-gallery-controls'}).appendTo(item);
+                        $('<button>', {type: 'button', class: 'button angelcandle-gallery-up', text: '←', 'aria-label': 'Sposta foto a sinistra'}).appendTo(controls);
+                        $('<button>', {type: 'button', class: 'button angelcandle-gallery-down', text: '→', 'aria-label': 'Sposta foto a destra'}).appendTo(controls);
                         $('<button>', {
                             type: 'button',
                             class: 'button angelcandle-gallery-remove',
@@ -239,6 +256,19 @@ function angelcandle_creazioni_gallery_admin_assets(string $hook): void
                 });
 
                 frame.open();
+            });
+
+            $(document).on('click', '.angelcandle-gallery-up, .angelcandle-gallery-down', function(e) {
+                e.preventDefault();
+                const item = $(this).closest('.angelcandle-gallery-item');
+                if ($(this).hasClass('angelcandle-gallery-up')) {
+                    const previous = item.prev('.angelcandle-gallery-item');
+                    if (previous.length) item.insertBefore(previous);
+                } else {
+                    const next = item.next('.angelcandle-gallery-item');
+                    if (next.length) item.insertAfter(next);
+                }
+                updateGalleryIds();
             });
 
             $(document).on(
