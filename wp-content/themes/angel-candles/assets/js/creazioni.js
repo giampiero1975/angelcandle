@@ -23,16 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     filters.forEach(function (filter) {
         filter.addEventListener('click', function () {
-            applyFilter(this.dataset.filter);
-            const url = new URL(window.location.href);
-            if (this.dataset.filter === 'all') url.searchParams.delete('categoria');
-            else url.searchParams.set('categoria', this.dataset.filter);
-            window.history.replaceState({}, '', url);
+            const slug = this.dataset.filter;
+            const base = window.location.origin + '/creazioni/';
+            window.location.assign(slug === 'all' ? base : base + encodeURIComponent(slug) + '/');
         });
     });
 
-    const requestedCategory = new URLSearchParams(window.location.search).get('categoria');
-    if (requestedCategory) applyFilter(requestedCategory);
+    const segments = window.location.pathname.replace(/\\/+$/, '').split('/').filter(Boolean);
+    const selectedCategory = segments.length === 2 && segments[0] === 'creazioni'
+        ? decodeURIComponent(segments[1])
+        : 'all';
+    applyFilter(selectedCategory);
 
     if (!lightbox) return;
     const image = lightbox.querySelector('.creazioni-lightbox-image');
