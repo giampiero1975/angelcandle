@@ -251,3 +251,73 @@ function angelcandle_convert_uploaded_image_to_webp(array $upload): array
     return $upload;
 }
 add_filter('wp_handle_upload', 'angelcandle_convert_uploaded_image_to_webp', 20);
+
+
+/**
+ * Pretty URLs for gallery filters: /creazioni/{category}/.
+ * Keep /creazioni/categoria/{category}/ taxonomy URLs distinct and
+ * do not hijack existing single creation permalinks.
+ */
+function angelcandle_gallery_pretty_rewrites(): void
+{
+    add_rewrite_rule(
+        '^creazioni/([^/]+)/?$',
+        'index.php?post_type=angel_creazione&angel_gallery_category=$matches[1]',
+        'top'
+    );
+}
+add_action('init', 'angelcandle_gallery_pretty_rewrites', 20);
+
+add_filter('query_vars', static function (array $vars): array {
+    $vars[] = 'angel_gallery_category';
+    return $vars;
+});
+
+add_action('pre_get_posts', static function (WP_Query $query): void {
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+    $slug = sanitize_title((string) $query->get('angel_gallery_category'));
+    if (!$slug) {
+        return;
+    }
+    // Do not return a 200 page for unknown categories.
+    $term = get_term_by('slug', $slug, 'angel_creazione_categoria');
+    if (!$term || is_wp_error($term)) {
+        $query->set('post__in', [0]);
+        return;
+    }
+    $query->set('post_type', 'angel_creazione');
+    $query->set('tax_query', [[
+        'taxonomy' => 'angel_creazione_categoria',
+        'field' => 'slug',
+        'terms' => [$slug],
+    ]]);
+}, 20);
+
+add_filter('redirect_canonical', static function ($redirect) {
+    return get_query_var('angel_gallery_category') ? false : $redirect;
+});
+
+add_action('template_redirect', static function (): void {
+    if (is_admin() || !is_post_type_archive('angel_creazione')) {
+        return;
+    }
+    if (!isset($_GET['categoria']) || !is_string($_GET['categoria'])) {
+        return;
+    }
+    $slug = sanitize_title(wp_unslash($_GET['categoria']));
+    if ($slug && get_term_by('slug', $slug, 'angel_creazione_categoria')) {
+        wp_safe_redirect(home_url('/creazioni/' . $slug . '/'), 301);
+        exit;
+    }
+}, 2);
+
+// Flush only once after deployment, never on every public request.
+add_action('admin_init', static function (): void {
+    if (get_option('angelcandle_gallery_rewrite_version') === '1') {
+        return;
+    }
+    flush_rewrite_rules(false);
+    update_option('angelcandle_gallery_rewrite_version', '1', false);
+});
