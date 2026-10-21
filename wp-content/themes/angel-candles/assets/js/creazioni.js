@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    const segments = window.location.pathname.replace(/\\/+$/, '').split('/').filter(Boolean);
+    const segments = window.location.pathname.split('/').filter(Boolean);
     const selectedCategory = segments.length === 2 && segments[0] === 'creazioni'
         ? decodeURIComponent(segments[1])
         : 'all';
