@@ -5,6 +5,9 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
+$selected_slug = sanitize_title((string) get_query_var('angel_gallery_category'));
+$selected_term = $selected_slug ? get_term_by('slug', $selected_slug, 'angel_creazione_categoria') : false;
+
 $categories = get_terms([
     'taxonomy'   => 'angel_creazione_categoria',
     'hide_empty' => true,
@@ -13,7 +16,7 @@ $categories = get_terms([
 
 <main class="creazioni-page">
     <section class="creazioni-header">
-        <h1>Le mie creazioni</h1>
+        <h1><?php echo esc_html($selected_term ? $selected_term->name : 'Le mie creazioni'); ?></h1>
         <p>
             Ogni candela nasce da un'idea, da un'occasione
             o semplicemente dal desiderio di creare qualcosa di speciale.
