@@ -10,7 +10,7 @@ $features = array(
 $creations = array(
     array('https://angelcandles.it/wp-content/uploads/2026/10/Candela-cubica-alla-lavanda.webp', __('Geometriche', 'angel-candles'), 'geometriche'),
     array('f5852-small.webp', __('Bomboniere', 'angel-candles'), 'bomboniere'),
-    array('26b64-small.webp', __('Festività', 'angel-candles'), 'festivita'),
+    array('https://angelcandles.it/wp-content/uploads/2026/10/Candele-gnomo-natalizie-in-confezione-regalo.webp', __('Festività', 'angel-candles'), 'festivita'),
     array('41f1f-small.webp', __('Tematiche', 'angel-candles'), 'tematiche'),
 );
 $creazioni_url = get_post_type_archive_link('angel_creazione') ?: home_url('/creazioni/');
