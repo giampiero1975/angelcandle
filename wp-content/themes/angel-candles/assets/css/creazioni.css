@@ -451,3 +451,16 @@ body.creazioni-lightbox-open {
 .creazioni-lightbox-photo .creazioni-lightbox-image {
     max-height: calc(100% - 130px);
 }
+
+/* Mobile: rendere esplicite apertura e navigazione della galleria */
+.creazioni-lightbox-hint { display: none; }
+@media (max-width: 600px) {
+  .creazione-image-overlay { display: flex; opacity: 1; align-items: flex-end; padding: 16px; background: linear-gradient(to top, rgba(24,27,22,.68), transparent 45%); }
+  .creazione-image-overlay span { transform: none; font-size: 13px; font-weight: 600; letter-spacing: .04em; }
+  .creazione-image-overlay span::before { content: "Tocca per aprire la galleria"; }
+  .creazione-image-overlay span { font-size: 0; }
+  .creazione-image-overlay span::before { font-size: 13px; }
+  .creazioni-lightbox-hint { display: block; margin: 5px 0 0; color: rgba(247,242,232,.8); font-size: 12px; }
+  .creazioni-lightbox-nav:not([hidden]) { display: flex; align-items: center; justify-content: center; z-index: 3; opacity: 1; color: #fff; background: rgba(143,154,123,.65); border-radius: 999px; width: 48px; height: 48px; font-size: 40px; }
+  .creazioni-lightbox-nav[hidden] { display: none; }
+}

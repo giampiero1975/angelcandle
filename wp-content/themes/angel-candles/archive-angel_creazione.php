@@ -137,6 +137,7 @@ $categories = get_terms([
             <div>
                 <p class="creazioni-lightbox-title"></p>
                 <p class="creazioni-lightbox-counter"></p>
+                <p class="creazioni-lightbox-hint">Scorri per vedere le altre foto</p>
             </div>
             <button class="creazioni-lightbox-close" type="button" data-lightbox-close aria-label="Chiudi galleria">&times;</button>
         </div>
