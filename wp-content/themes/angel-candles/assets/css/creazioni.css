@@ -464,3 +464,37 @@ body.creazioni-lightbox-open {
   .creazioni-lightbox-nav:not([hidden]) { display: flex; align-items: center; justify-content: center; z-index: 3; opacity: 1; color: #fff; background: rgba(143,154,123,.65); border-radius: 999px; width: 48px; height: 48px; font-size: 40px; }
   .creazioni-lightbox-nav[hidden] { display: none; }
 }
+
+/* Mobile: frecce ai lati della foto e suggerimento leggibile */
+@media (max-width: 600px) {
+  .creazioni-lightbox-topbar { min-height: 82px; }
+  .creazioni-lightbox-hint {
+    display: block;
+    margin: 7px 0 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: .01em;
+  }
+  .creazioni-lightbox-stage { padding: 0 32px 16px; }
+  .creazioni-lightbox-nav:not([hidden]) {
+    position: absolute;
+    top: 45%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 54px;
+    border-radius: 10px;
+    background: rgba(65,72,60,.88);
+    color: #fff;
+    font-size: 42px;
+    opacity: 1;
+    z-index: 5;
+    box-shadow: 0 2px 12px rgba(0,0,0,.3);
+  }
+  .creazioni-lightbox-prev { left: -5px; }
+  .creazioni-lightbox-next { right: -5px; }
+  .creazioni-lightbox-prev:hover,
+  .creazioni-lightbox-next:hover { transform: translateY(-50%); }
+}
